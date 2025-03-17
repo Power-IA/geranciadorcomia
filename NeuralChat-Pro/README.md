@@ -1,51 +1,93 @@
-# OpenRouter Chat Interface
+# NeuralChat Pro
 
-Uma interface de chat simples para interagir com modelos de linguagem através da API do OpenRouter.
+NeuralChat Pro é uma aplicação web moderna e profissional para interação com modelos de linguagem através da API OpenRouter. O aplicativo oferece uma interface intuitiva e recursos avançados para gerenciamento de contexto e personalização de respostas.
 
-## Funcionalidades
+## 🌟 Características
 
-- Conexão com a API do OpenRouter usando sua chave de API
-- Seleção de modelos disponíveis (gratuitos e pagos)
-- Suporte a múltiplos idiomas na interface (Português, Inglês, Espanhol)
-- Configuração do idioma de resposta do modelo
-- Ajuste de parâmetros como temperatura e tokens máximos
-- Histórico de conversa com contexto
-- Contagem de tokens utilizados
+- **Interface Moderna**: Design responsivo e intuitivo
+- **Suporte Multilíngue**: Disponível em Português, Inglês e Espanhol
+- **Gerenciamento de Contexto**: Sistema avançado para manter contexto das conversas
+- **Personalização de Modelos**: Ajuste fino de parâmetros como temperatura e tokens
+- **Suporte a Markdown**: Formatação rica nas mensagens
+- **Gerenciamento de Elementos**: Sistema para criar e gerenciar elementos com contexto
+- **Animações Suaves**: Feedback visual para melhor experiência do usuário
 
-## Como usar
+## 🚀 Tecnologias Utilizadas
 
-1. Abra o arquivo `index.html` em seu navegador
-2. Insira sua chave de API do OpenRouter (começa com `sk-`)
-3. Clique em "Conectar" para carregar os modelos disponíveis
-4. Selecione um modelo na lista
-5. Configure os parâmetros desejados:
-   - Idioma do modelo: define o idioma em que o modelo responderá
-   - Temperatura: controla a criatividade das respostas (0-2)
-   - Tokens máximos: limita o tamanho das respostas
+- HTML5
+- CSS3 (com Flexbox e Grid)
+- JavaScript (ES6+)
+- Marked.js para processamento de Markdown
+- Highlight.js para destacar código
+- API OpenRouter para integração com modelos de IA
 
-6. Digite sua mensagem e pressione Enter ou clique em "Enviar"
-7. O modelo responderá mantendo o contexto da conversa
+## 📋 Pré-requisitos
 
-## Solução de problemas
+- Navegador web moderno com suporte a JavaScript
+- API Key do OpenRouter (obtida em [OpenRouter](https://openrouter.ai/))
 
-Se você encontrar problemas de conexão:
+## 🛠️ Instalação
 
-1. Verifique se sua chave de API está correta
-2. Certifique-se de que sua conexão com a internet está funcionando
-3. Verifique se você tem créditos suficientes na sua conta do OpenRouter
-4. Abra o console do navegador (F12) para ver mensagens de erro detalhadas
+1. Clone o repositório:
+```bash
+git clone https://github.com/seu-usuario/NeuralChat-Pro.git
+```
 
-## Obter uma chave de API
+2. Abra o arquivo `index.html` em seu navegador
 
-Para obter uma chave de API do OpenRouter:
+3. Insira sua API Key do OpenRouter no campo apropriado
 
-1. Crie uma conta em [openrouter.ai](https://openrouter.ai)
-2. Acesse seu painel de controle
-3. Gere uma nova chave de API
-4. Copie a chave e use-a nesta interface
+## 💡 Como Usar
 
-## Notas
+1. **Conecte-se**: Insira sua API Key do OpenRouter e clique em "Conectar"
+2. **Selecione o Modelo**: Escolha entre os modelos disponíveis (gratuitos ou pagos)
+3. **Ajuste os Parâmetros**: Personalize temperatura, tokens e outros parâmetros
+4. **Inicie a Conversa**: Digite sua mensagem e envie
+5. **Gerencie Elementos**: Use o painel de elementos para criar e gerenciar contexto
 
-- Os modelos gratuitos têm limites de uso
-- Alguns modelos podem ter custos associados
-- A API key é armazenada apenas na memória do navegador durante a sessão 
+## ⚙️ Parâmetros do Modelo
+
+- **Temperatura**: Controla a criatividade das respostas (0.0 - 2.0)
+- **Tokens Máximos**: Limite de tokens por resposta
+- **Top P**: Controla a diversidade das respostas
+- **Penalidade de Frequência**: Ajusta a repetição de palavras
+- **Penalidade de Presença**: Ajusta a introdução de novos tópicos
+
+## 🌐 Suporte a Idiomas
+
+- Português (Brasil)
+- Inglês (EUA)
+- Espanhol (Espanha)
+
+## 🔒 Segurança
+
+- API Key armazenada localmente
+- Comunicação segura com a API OpenRouter
+- Validação de entrada de dados
+
+## 🤝 Contribuindo
+
+Contribuições são bem-vindas! Por favor, siga estas etapas:
+
+1. Faça um Fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## 📞 Suporte
+
+Para suporte, envie um email para seu-email@exemplo.com ou abra uma issue no repositório.
+
+## 🙏 Agradecimentos
+
+- [OpenRouter](https://openrouter.ai/) pela API
+- [Marked.js](https://marked.js.org/) pelo processamento de Markdown
+- [Highlight.js](https://highlightjs.org/) pela formatação de código
+
+---
+Desenvolvido com ❤️ por [Mestres dos Prompts] 
