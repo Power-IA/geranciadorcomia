@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuralChat Pro - Chat Inteligente com Contexto</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Adiciona Marked.js para suporte a Markdown -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Adiciona highlight.js para destacar código -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Primeira Sessão: Título, API e Modelo -->
+        <section class="section-one">
+            <div class="header">
+                <h1 id="pageTitle">NeuralChat Pro</h1>
+                <div class="language-selector">
+                    <select id="languageSelect" onchange="changeLanguage(this.value)">
+                        <option value="pt-BR">Português</option>
+                        <option value="en-US">English</option>
+                        <option value="es-ES">Español</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="setup-section">
+                <input type="password" id="apiKeyInput" placeholder="Digite sua API Key do OpenRouter">
+                <button onclick="fetchModels()" id="connectButton">Conectar</button>
+            </div>
+
+            <div class="model-selection">
+                <div class="dropdown-container">
+                    <label id="modelSelectLabel">Selecione o modelo:</label>
+                    <select id="modelSelect" disabled>
+                        <optgroup label="Modelos Gratuitos" id="freeModels">
+                            <option value="">Carregando modelos...</option>
+                        </optgroup>
+                        <optgroup label="Modelos Pagos" id="paidModels">
+                        </optgroup>
+                    </select>
+                    <button onclick="clearChat()" id="clearButton" disabled>Limpar Chat</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Segunda Sessão: Controle do Modelo -->
+        <section class="section-two">
+            <div class="model-parameters">
+                <h3 id="parametersTitle">Parâmetros do Modelo</h3>
+                <div class="parameter-row">
+                    <label id="modelLanguageLabel">Idioma do Modelo:</label>
+                    <select id="modelLanguage">
+                        <option value="">Auto (usar idioma da interface)</option>
+                        <option value="pt">Português</option>
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
+                        <option value="fr">Français</option>
+                        <option value="de">Deutsch</option>
+                        <option value="it">Italiano</option>
+                        <option value="ja">日本語</option>
+                        <option value="ko">한국어</option>
+                        <option value="zh">中文</option>
+                        <option value="ru">Русский</option>
+                    </select>
+                </div>
+                <div class="parameter-row">
+                    <label id="temperatureLabel">Temperatura:</label>
+                    <input type="range" id="temperatureSlider" min="0" max="2" step="0.1" value="0.7">
+                    <span id="temperatureValue">0.7</span>
+                </div>
+                <div class="parameter-row">
+                    <label id="maxTokensLabel">Tokens Máximos:</label>
+                    <input type="number" id="maxTokensInput" min="100" max="4000" value="1000">
+                </div>
+            </div>
+        </section>
+
+        <!-- Terceira Sessão: Três Colunas -->
+        <section class="section-three">
+            <div class="three-columns">
+                <div class="column">
+                    <div class="elements-panel">
+                        <h3>Elementos</h3>
+                        <button id="addElementBtn" class="add-element-btn">+ Novo Elemento</button>
+                        <div class="elements-list">
+                            <!-- Lista de elementos será preenchida via JavaScript -->
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="selected-panel">
+                        <h3>Elementos Selecionados</h3>
+                        <div class="selected-list">
+                            <!-- Lista de elementos selecionados será preenchida via JavaScript -->
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="chat-panel">
+                        <h3>Chat</h3>
+                        <div class="chat-container">
+                            <div class="chat-messages" id="chatMessages">
+                                <div class="typing-indicator" id="typingIndicator">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="chat-input">
+                                <textarea id="userInput" placeholder="Digite sua mensagem..." disabled></textarea>
+                                <button onclick="sendMessage()" id="sendButton" disabled>Enviar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal de Criação de Elemento -->
+    <div id="elementModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Novo Elemento</h2>
+            <form id="elementForm">
+                <div class="form-group">
+                    <label for="elementName">Nome do Elemento:</label>
+                    <input type="text" id="elementName" required placeholder="Digite o nome do elemento">
+                </div>
+                <div class="form-group">
+                    <label for="elementAddress">Endereçamento:</label>
+                    <input type="text" id="elementAddress" required placeholder="Digite o endereçamento">
+                </div>
+                <div class="form-group">
+                    <label for="elementLimit">Limite:</label>
+                    <input type="number" id="elementLimit" required min="0" placeholder="Digite o limite">
+                </div>
+                <div class="form-group">
+                    <label for="elementContent">Conteúdo:</label>
+                    <textarea id="elementContent" required placeholder="Digite o conteúdo do elemento"></textarea>
+                </div>
+                <button type="submit" class="save-btn">Salvar Elemento</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="languages.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
